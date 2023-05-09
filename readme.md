@@ -9,6 +9,6 @@
 ### Descripción
 Este curso es sobre tipado avanzado al lenguaje de programación TypeScript. Este es la segunda parte de un conjunto de 3 cursos sobre TypeScript:
   - Introducción
-  -> Tipos Avanzados y Funciones
-  - Programación Orientada a Objetos.
+  - -> Tipos Avanzados y Funciones
+  - Programación Orientada a Objetos
 En este repositorio solo estan almacenadas mis practicas en el lenguaje Typescript sobre los tipados avanzados de TS.
