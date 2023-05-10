@@ -36,3 +36,18 @@ const parse = (str: string):unknown => {
 };
 
 JSON.parse('{name: "dibot55"}');
+
+// Detectar un array de una variable ANY o unknown
+let arr: unknown;
+
+arr = ["hola", 1,2,3]
+
+const exemple = (input: unknown) => {
+  if (typeof input === "string" ){
+    return console.log("String");
+  } else if(Array.isArray(input)){
+    return console.log("Es Array");
+  };
+};
+
+exemple(arr);
