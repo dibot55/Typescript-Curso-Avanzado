@@ -21,7 +21,7 @@ const exempleArray = (input: unknown) => {
   } else if(Array.isArray(input)){
     return console.log("Es Array");
   };
-  return fail("FAIL"); // Da un error por que nunca para y no retorna nada (Nuevas versiones de TS)
+  return fail("FAIL"); // Da un error por que nunca para y no retorna nada
 };
 
 exempleArray("string");
