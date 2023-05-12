@@ -21,7 +21,7 @@ product.push({
 });
 
 // Interfaz - Una interfaz se puede extender. Un type no. Solo por eso es mas usado.
-interface Product1 {
+interface ProductV1 {
   id: string | number,
   title: string,
   createdAt: Date,
@@ -29,7 +29,7 @@ interface Product1 {
   size?: Size
 };
 
-const product1: Product[] = [];
+const product1: ProductV1[] = [];
 
 product1.push({
   id: "1",
