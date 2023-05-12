@@ -1,4 +1,4 @@
-// Estructuras complejas en TS.
+// Estructuras complejas en TS y extender interfaces.
 import { addProduct } from "./products/product.service";
 
 // Aqui se consume la interfaz
