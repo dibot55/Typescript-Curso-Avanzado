@@ -1,5 +1,5 @@
 // Estructuras complejas en TS y extender interfaces.
-import { addProduct, productArray, updateProduct} from "./products/product.service";
+import { addProduct, productArray, updateProduct, readProduct} from "./products/product.service";
 import { faker } from "@faker-js/faker"; // FakerJS - Genera campos falsos
 
 // Aqui se consume la interfaz
@@ -26,4 +26,10 @@ updateProduct(product.id, {
   title: "new title",
   stock: 80,
   price: 123,
+});
+
+// Read
+readProduct({
+  stock: 10,
+  color: "red"
 });

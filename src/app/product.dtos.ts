@@ -24,3 +24,12 @@ export interface UpdateDtoPartialInterface extends Partial<CreatedProductDtoOmit
 type UpdateDtoRequired = Required<Product1>;
 
 interface UpdateDtoRequiredInterface extends Required<Product1> {}
+
+// ReadOnly - Solo lectura para interfaces
+export interface ReadDtoPartialInterface extends Partial<Product1> {}
+
+export interface ReadDtoPartialInterfaceReadOnly extends Readonly<ReadDtoPartialInterface> {} // Solo lectura
+
+  // o puedes hacer esto anidando dos utility types
+
+interface ReadDtoPartialInterfaceMixed extends Readonly<Partial<Product1>> {}

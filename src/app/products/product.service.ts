@@ -1,6 +1,6 @@
 // Manipulacion de los datos
 import {Product1} from "./product.models";
-import { CreatedProductDtoOmitInterface, UpdateDtoPartialInterface } from "../product.dtos";
+import { CreatedProductDtoOmitInterface, UpdateDtoPartialInterface, ReadDtoPartialInterfaceReadOnly } from "../product.dtos";
 import { faker } from "@faker-js/faker";
 
 export const productArray: Product1[] = [];
@@ -25,14 +25,14 @@ export const addProduct = (data: CreatedProductDtoOmitInterface): Product1 => {
 };
 
 // Read
-export const readProduct = () => {
+export const readProduct = (dto: ReadDtoPartialInterfaceReadOnly): Product1[] => {
+  // dto.category = {asdsa}; // <-- Solo lectura
   return productArray;
 };
 
 // Read By ID
-export const readIdProduct = (id: string) => {
-  const response = productArray.find((item)=>{item.id === id});
-  return response;
+export const readIdProduct = () => {
+
 };
 
 // Update
@@ -49,9 +49,5 @@ export const updateProduct = (id: string | number, changes: UpdateDtoPartialInte
 
 // Delete
 export const deleteProduct = (id: string) => {
-  const product = readIdProduct(id);
-  if(product){
-    const index= productArray.findIndex((item) => {item.id === id});
-    productArray.splice(index, 1);
-  };
+
 };
