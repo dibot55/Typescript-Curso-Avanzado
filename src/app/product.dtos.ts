@@ -32,4 +32,9 @@ export interface ReadDtoPartialInterfaceReadOnly extends Readonly<ReadDtoPartial
 
   // o puedes hacer esto anidando dos utility types
 
-interface ReadDtoPartialInterfaceMixed extends Readonly<Partial<Product1>> {}
+export interface ReadDtoPartialInterfaceMixed extends Readonly<Partial<Product1>> {}
+
+// ReadOnly Array - Evitar mutaciones en un arreglo
+export interface ReadDtoPartialInterfaceMixedyTagsArray extends Readonly<Partial<Omit<Product1, "tags">>> { // Omit para que no puedas reasignarlo con un = ["asd", "asd"]
+  readonly tags?: ReadonlyArray<string>; // Readonly para evitar reasignacion tags = [] y Readonly para que no puedas mutarlo con un .push o un .pop
+};

@@ -1,6 +1,6 @@
 // Manipulacion de los datos
 import {Product1} from "./product.models";
-import { CreatedProductDtoOmitInterface, UpdateDtoPartialInterface, ReadDtoPartialInterfaceReadOnly } from "../product.dtos";
+import { CreatedProductDtoOmitInterface, UpdateDtoPartialInterface, ReadDtoPartialInterfaceMixedyTagsArray} from "../product.dtos";
 import { faker } from "@faker-js/faker";
 
 export const productArray: Product1[] = [];
@@ -25,8 +25,9 @@ export const addProduct = (data: CreatedProductDtoOmitInterface): Product1 => {
 };
 
 // Read
-export const readProduct = (dto: ReadDtoPartialInterfaceReadOnly): Product1[] => {
+export const readProduct = (dto: ReadDtoPartialInterfaceMixedyTagsArray): Product1[] => {
   // dto.category = {asdsa}; // <-- Solo lectura
+  // dto.tags?.push("asd"); // No me deberia dejar mutar el array
   return productArray;
 };
 
