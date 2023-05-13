@@ -30,13 +30,14 @@ export const readProduct = (dto: ReadDtoPartialInterfaceReadOnly): Product1[] =>
   return productArray;
 };
 
-// Read By ID
-export const readIdProduct = () => {
-
+// Read By ID - Acceder al tipado por indice. Por si cambia de string  a number :0
+export const readIdProduct = (id: Product1["id"]): Product1 => {
+  const index = productArray.findIndex((item) => {item.id === id});
+  return productArray[index];
 };
 
 // Update
-export const updateProduct = (id: string | number, changes: UpdateDtoPartialInterface): Product1 => {
+export const updateProduct = (id: Product1["id"], changes: UpdateDtoPartialInterface): Product1 => {
   const index = productArray.findIndex((item) => {item.id === id});
   const product = productArray[index];
   // Actualización
@@ -48,6 +49,6 @@ export const updateProduct = (id: string | number, changes: UpdateDtoPartialInte
 };
 
 // Delete
-export const deleteProduct = (id: string) => {
+export const deleteProduct = (id: Product1["id"]) => {
 
 };
