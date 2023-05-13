@@ -1,12 +1,12 @@
 // Manipulacion de los datos
 import {Product1} from "./product.models";
-import { CreatedProductDtoInterface } from "../product.dtos";
+import { CreatedProductDtoOmitInterface, UpdateDtoPartialInterface } from "../product.dtos";
 import { faker } from "@faker-js/faker";
 
 export const productArray: Product1[] = [];
 
 // Create
-export const addProduct = (data: CreatedProductDtoInterface): Product1 => {
+export const addProduct = (data: CreatedProductDtoOmitInterface): Product1 => {
   // Esto lo crea la base de datos no le hagas caso
   const newProduct = {
     ...data,
@@ -35,21 +35,16 @@ export const readIdProduct = (id: string) => {
   return response;
 };
 
-export const updateProduct = (id: string, changes: Product1) => {
-  let actual = readIdProduct(id);
-  if (actual) {
-    actual.title=changes.title;
-    actual.description=changes.description;
-    actual.price=changes.price;
-    actual.image=changes.image;
-    actual.color=changes.color;
-    actual.stock=changes.stock;
-    actual.size=changes.size;
-    actual.category=changes.category;
-    actual.isNew=changes.isNew;
-    actual.createdAt=changes.createdAt;
-    actual.updatedAt=changes.updatedAt;
+// Update
+export const updateProduct = (id: string | number, changes: UpdateDtoPartialInterface): Product1 => {
+  const index = productArray.findIndex((item) => {item.id === id});
+  const product = productArray[index];
+  // Actualización
+  productArray[index] = {
+    ...product, // Elementos actuales
+    ...changes // Elementos Nuevos
   };
+  return productArray[index];
 };
 
 // Delete

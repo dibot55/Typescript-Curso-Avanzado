@@ -1,9 +1,10 @@
 // Estructuras complejas en TS y extender interfaces.
-import { addProduct, productArray} from "./products/product.service";
+import { addProduct, productArray, updateProduct} from "./products/product.service";
 import { faker } from "@faker-js/faker"; // FakerJS - Genera campos falsos
 
 // Aqui se consume la interfaz
 
+// Create
 for (let i = 0; i<50; i++){
   addProduct({
     title: faker.commerce.productName(),
@@ -18,3 +19,11 @@ for (let i = 0; i<50; i++){
 };
 
 console.log(productArray);
+
+// Update
+const product = productArray[0];
+updateProduct(product.id, {
+  title: "new title",
+  stock: 80,
+  price: 123,
+});
