@@ -2,6 +2,6 @@
 
 export interface BaseModel {
   readonly id: string | number, // READ ONLY para evitar sobreescrituras en TS
-  createdAt: Date,
-  updatedAt: Date;
+  createdAt?: Date,
+  updatedAt?: Date;
 }

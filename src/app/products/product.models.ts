@@ -18,8 +18,14 @@ export type SizeWear = "C" | "M" | "L" | "XL";
 
 
 export interface Product1 extends BaseModel{ // aqui se extiende la interfaz
-  title: string,
-  stock: number,
-  size?: SizeWear,
-  category: Category
+  title: string;
+  image: string;
+  description: string;
+  color: string;
+  stock: number;
+  price: number;
+  size?: SizeWear;
+  category: Category;
+  isNew: boolean;
+  tags?: string[];
 };
